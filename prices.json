@@ -1,0 +1,145 @@
+{
+  "region": "us-east-1",
+  "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/<service>/current/us-east-1/index.json",
+  "prices": {
+    "kds_shard_hour": {
+      "usd": 0.015,
+      "unit": "ShardHour",
+      "usagetype": "Storage-ShardHour",
+      "description": "$0.015 per provisioned shard-hour"
+    },
+    "kds_put_payload_unit": {
+      "usd": 1.4e-08,
+      "unit": "PutRequest",
+      "usagetype": "PutRequestPayloadUnits",
+      "description": "$0.014 per 1 million payload units"
+    },
+    "kds_od_stream_hour": {
+      "usd": 0.04,
+      "unit": "StreamHr",
+      "usagetype": "OnDemand-StreamHour",
+      "description": "0.04 per Stream Hour Used"
+    },
+    "kds_od_in_gb": {
+      "usd": 0.08,
+      "unit": "GB",
+      "usagetype": "OnDemand-BilledIncomingBytes",
+      "description": "0.08 per GB of data written"
+    },
+    "kds_od_out_gb": {
+      "usd": 0.04,
+      "unit": "GB",
+      "usagetype": "OnDemand-BilledOutgoingBytes",
+      "description": "0.04 per GB of data read using GetRecords Consumer"
+    },
+    "kds_oda_in_gb": {
+      "usd": 0.032,
+      "unit": "GB",
+      "usagetype": "Advantage-BilledIncomingBytes",
+      "description": "$0.032 per GB for Advantage-BilledIncomingBytes in US East (N. Virginia)"
+    },
+    "kds_oda_out_gb": {
+      "usd": 0.016,
+      "unit": "GB",
+      "usagetype": "Advantage-BilledOutgoingBytes",
+      "description": "$0.016 per GB for Advantage-BilledOutgoingBytes in US East (N. Virginia)"
+    },
+    "firehose_in_gb": {
+      "usd": 0.029,
+      "unit": "GB",
+      "usagetype": "USE1-BilledBytes",
+      "description": "Tier 1 $0.029 per GB of data ingested"
+    },
+    "flink_kpu_hour": {
+      "usd": 0.11,
+      "unit": "KPU-Hour",
+      "usagetype": "USE1-KPU-Hour-Java",
+      "description": "$0.11 per Kinesis Processing Unit-hour for Apache Flink applications"
+    },
+    "flink_storage_gb_month": {
+      "usd": 0.1,
+      "unit": "GB-month",
+      "usagetype": "USE1-RunningApplicationStorage",
+      "description": "$0.10 per GB-month of running application storage"
+    },
+    "msk_m7g_large_hour": {
+      "usd": 0.204,
+      "unit": "hours",
+      "usagetype": "USE1-Kafka.m7g.large",
+      "description": "$0.204 per broker hour for Kafka.m7g.large in US East (N. Virginia)"
+    },
+    "msk_storage_gb_month": {
+      "usd": 0.1,
+      "unit": "GB-Mo",
+      "usagetype": "USE1-Kafka.Storage.GP2",
+      "description": "$0.10 per GB-Mo for storage in US East (N. Virginia)"
+    },
+    "msk_express_m7g_large_hour": {
+      "usd": 0.408,
+      "unit": "hours",
+      "usagetype": "USE1-Express.m7g.large",
+      "description": "$0.408 per broker hour for Express.m7g.large in US East (N. Virginia)"
+    },
+    "msk_express_in_gb": {
+      "usd": 0.01,
+      "unit": "GB",
+      "usagetype": "USE1-Express.In-Bytes",
+      "description": "$0.01 per GB of data written to an Express broker in US East (N. Virginia)"
+    },
+    "msk_express_storage_gb_month": {
+      "usd": 0.1,
+      "unit": "GB-Mo",
+      "usagetype": "USE1-Express.Storage",
+      "description": "$0.10 per GB-Mo for storage in US East (N. Virginia)"
+    },
+    "msk_sls_cluster_hour": {
+      "usd": 0.75,
+      "unit": "hours",
+      "usagetype": "USE1-KafkaServerless-ClusterHours",
+      "description": "$0.75 per cluster-hour  for serverless cluster in US East (N. Virginia)"
+    },
+    "msk_sls_partition_hour": {
+      "usd": 0.0015,
+      "unit": "hours",
+      "usagetype": "USE1-KafkaServerless-PartitionHours",
+      "description": "$0.0015 per partition-hour  for serverless cluster in US East (N. Virginia)"
+    },
+    "msk_sls_in_gb": {
+      "usd": 0.1,
+      "unit": "GB",
+      "usagetype": "USE1-KafkaServerless-In-Bytes",
+      "description": "$0.10 per GB  data in for serverless cluster in US East (N. Virginia)"
+    },
+    "msk_sls_out_gb": {
+      "usd": 0.05,
+      "unit": "GB",
+      "usagetype": "USE1-KafkaServerless-Out-Bytes",
+      "description": "$0.05 per GB  data out for serverless cluster in US East (N. Virginia)"
+    },
+    "msk_sls_storage_gb_month": {
+      "usd": 0.1,
+      "unit": "GB-Mo",
+      "usagetype": "USE1-KafkaServerless-StorageHours",
+      "description": "$0.10 per GB-Mo  for serverless cluster storage in US East (N. Virginia)"
+    },
+    "lambda_request": {
+      "usd": 2e-07,
+      "unit": "Requests",
+      "usagetype": "Request-ARM",
+      "description": "AWS Lambda - Total Requests for ARM - US East (Northern Virginia)"
+    },
+    "lambda_gb_second": {
+      "usd": 1.33334e-05,
+      "unit": "Lambda-GB-Second",
+      "usagetype": "Lambda-GB-Second-ARM",
+      "description": "AWS Lambda - Total Compute for ARM - US East (Northern Virginia)-Tier-1"
+    }
+  },
+  "published": {
+    "AmazonKinesis": "2026-09-11T12:44:43Z",
+    "AmazonKinesisFirehose": "2026-09-11T12:44:46Z",
+    "AmazonKinesisAnalytics": "2026-09-11T12:44:44Z",
+    "AmazonMSK": "2026-09-11T12:44:56Z",
+    "AWSLambda": "2026-10-12T22:32:57Z"
+  }
+}

@@ -26,13 +26,15 @@ The usual way to land a stream in S3 for analytics is [Amazon Data Firehose](htt
 
 For this stream, it costs $717 a month. A Kinesis data stream with a Lambda consumer delivers the same events in about a second for $139.
 
-The difference is one line on the pricing page. Firehose ingestion for Direct PUT and Kinesis sources is "billed per GB ingested in 5KB increments." A 500-byte event is billed as 5 KB. You pay for ten times the data you sent.
+Most of that gap is one line on the pricing page. Firehose ingestion for Direct PUT and Kinesis sources is "billed per GB ingested in 5KB increments." A 500-byte event is billed as 5 KB. You pay for ten times the data you sent.
 
 ![Four boxes drawn to scale against a 500-byte event, shown as a small parcel. Sent: 500 bytes, one times. Kinesis on-demand rounds it up to 1 KB, two times. Firehose bills it in 5 KB increments, ten times, so the parcel sits in a mostly empty box. Firehose with ten events packed into one record fills the same 5 KB box, about one times. A note adds that provisioned Kinesis charges per 25 KB PUT payload unit.](../figures/fig2-billed-vs-sent.png)
 
 Kinesis rounds too, just less. [On-demand mode](https://aws.amazon.com/kinesis/data-streams/pricing/) bills each record "rounded up to the nearest 1 KB," so a 500-byte event is billed as 1 KB. Provisioned mode charges per 25 KB "PUT payload unit," which a 500-byte record fills about a fiftieth of.
 
 The fix is on the producer, and it's cheap: pack several events into one record. With ten events per record, the same stream costs $72 a month through Firehose and $23 through provisioned Kinesis. The Kinesis Producer Library calls this aggregation; for Firehose, it can be as simple as writing newline-delimited JSON in batches.
+
+Even batched, Firehose costs about three times as much as a busy provisioned stream. That's not quite a like-for-like comparison: Firehose writes the data to S3 for you, while the Kinesis options only hand events to your code. But it means "slow" was never the cheap choice here.
 
 If your events are small, this matters more than any choice of service.
 
